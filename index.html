@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maria Queenie Kierl S. Esco | Professional Educator</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= ROOT VARIABLES ================= */
+:root{
+  --bg:#0f172a;
+  --card:rgba(255,255,255,0.05);
+  --text:#f1f5f9;
+  --primary:#3b82f6;
+  --accent:#9333ea;
+  --gradient:linear-gradient(135deg,#3b82f6,#9333ea);
+}
+
+/* ================= GLOBAL ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+/* ================= ANIMATED BACKGROUND ================= */
+body::before{
+  content:"";
+  position:fixed;
+  width:600px;
+  height:600px;
+  background:var(--gradient);
+  filter:blur(180px);
+  opacity:0.35;
+  top:-200px;
+  left:-200px;
+  animation:floatBg 12s infinite alternate ease-in-out;
+  z-index:-1;
+}
+
+@keyframes floatBg{
+  to{
+    transform:translate(250px,150px) scale(1.2);
+  }
+}
+
+/* ================= NAVBAR ================= */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  left:0;
+  padding:18px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  backdrop-filter:blur(12px);
+  background:rgba(15,23,42,0.7);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  z-index:1000;
+  flex-wrap:wrap;
+}
+
+nav h1 {
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+}
+
+nav h1 a{
+  text-decoration:none;
+  color:inherit;
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:30px;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:500;
+  position:relative;
+  transition:0.3s;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:var(--gradient);
+  transition:0.3s;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+/* Hamburger menu toggle */
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+  color:var(--text);
+}
+
+/* ================= HERO ================= */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 8%;
+  gap:80px;
+}
+
+.hero-text{
+  max-width:600px;
+  animation:fadeUp 1s ease forwards;
+}
+
+.hero-text h2{
+  font-size:52px;
+  font-weight:800;
+  background:var(--gradient);
+  background-clip:text;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  color:transparent;
+}
+
+.hero-text p{
+  margin-top:20px;
+  line-height:1.7;
+  font-weight:300;
+}
+
+.hero-btn{
+  margin-top:30px;
+  display:inline-block;
+  padding:12px 28px;
+  border-radius:30px;
+  background:var(--gradient);
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.hero-btn:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(147,51,234,0.4);
+}
+
+.hero-img img{
+  width:320px;
+  border-radius:20px;
+  animation:float 4s ease-in-out infinite;  
+  box-shadow:
+    0 10px 20px rgba(0,0,0,0.3),
+    0 20px 40px rgba(0,0,0,0.5),
+    0 30px 60px rgba(0,0,0,0.2);
+}
+
+/* Floating animation */
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-20px);}
+}
+
+/* ================= SECTIONS ================= */
+section{
+  padding:120px 8%;
+}
+
+section h2{
+  font-size:32px;
+  margin-bottom:50px;
+  text-align:center;
+  background:var(--gradient);
+  background-clip:text;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  color:transparent;
+}
+
+/* ================= CARDS ================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:var(--card);
+  backdrop-filter:blur(15px);
+  padding:30px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.4s;
+  opacity:0;
+  transform:translateY(40px);
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* ================= FOOTER ================= */
+footer{
+  text-align:center;
+  padding:40px;
+  border-top:1px solid rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.03);
+  font-size:14px;
+  color:#94a3b8;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* ================= CUSTOM CURSOR ================= */
+/* Hide the default cursor */
+body, a, button {
+  cursor: none;
+}
+
+/* Main cursor circle */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #D02752;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: transform 0.1s ease;
+}
+
+/* Shadow follower */
+.cursor-shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(208, 39, 82, 0.2);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+  transition: transform 0.15s ease;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablets */
+@media(max-width:900px){
+  nav ul{
+    gap:18px;
+  }
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    margin-top:120px;
+    gap:40px;
+  }
+
+  .hero-text h2{
+    font-size:40px;
+  }
+
+  .hero-img img{
+    width:260px;
+  }
+
+  section{
+    padding:100px 6%;
+  }
+}
+
+/* Mobile */
+@media(max-width:600px){
+  nav{
+    padding:16px 5%;
+    align-items:flex-start;
+  }
+
+  .menu-toggle{
+    display:block;
+    order:2;
+    margin-left:auto;
+  }
+
+  nav ul{
+    order:3;
+    width:100%;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    padding:0;
+    margin-top:10px;
+    background:rgba(15,23,42,0.95);
+    display:none;
+  }
+
+  nav ul.active{
+    display:flex;
+  }
+
+  nav ul li{
+    width:100%;
+    text-align:center;
+    padding:10px 0;
+  }
+
+  .hero{
+    padding:0 5%;
+  }
+
+  .hero-text h2{
+    font-size:30px;
+  }
+
+  .hero-text p{
+    font-size:14px;
+  }
+
+  .hero-img img{
+    width:220px;
+  }
+
+  section{
+    padding:80px 5%;
+  }
+
+  section h2{
+    font-size:24px;
+  }
+}
+
+
+.typing {
+  display: inline-block;
+  white-space: pre; /* preserves line breaks */
+  font-size: 2rem; /* adjust size as needed */
+  border-right: 4px solid var(--gradient);
+}
+
+
+
+/* Typing keyframes */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: var(--gradient); }
+}
+
+
+.typing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid var(--gradient);
+  animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: var(--gradient); }
+}
+
+
+/* ================= ABOUT SECTION LAYOUT ================= */
+.about-container{
+  display:flex;
+  gap:40px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.about-text{
+  flex:1 1 500px;
+}
+
+/* ================= CAROUSEL ================= */
+.carousel{
+  position:relative;
+  width:400px;
+  max-width:100%;
+  overflow:hidden;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+.carousel-images{
+  display:flex;
+  transition:transform 0.5s ease-in-out;
+}
+
+.carousel img{
+  width:100%;
+  flex-shrink:0;
+  object-fit:cover;
+}
+
+.carousel button{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.5);
+  border:none;
+  color:white;
+  font-size:24px;
+  padding:8px 12px;
+  cursor:pointer;
+  border-radius:50%;
+  transition:0.3s;
+}
+
+.carousel button:hover{
+  background:rgba(0,0,0,0.8);
+}
+
+.prev{
+  left:10px;
+}
+
+.next{
+  right:10px;
+}
+
+/* ================= ABOUT TEXT DESIGN ================= */
+
+.about-text{
+  position:relative;
+  line-height:1.8;
+  font-weight:300;
+}
+
+.about-text p{
+  margin-bottom:20px;
+  font-size:15px;
+  color:#e2e8f0;
+}
+
+/* Accent gradient line */
+.about-accent{
+  width:60px;
+  height:4px;
+  background:var(--gradient);
+  border-radius:10px;
+  margin-bottom:25px;
+}
+
+/* Highlight main words */
+.highlight{
+  font-weight:600;
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+
+/* Soft highlight */
+.highlight-soft{
+  color:#c084fc;
+  font-weight:500;
+}
+
+/* Badge style words */
+.badge{
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:20px;
+  background:rgba(147,51,234,0.15);
+  border:1px solid rgba(147,51,234,0.4);
+  font-size:13px;
+  font-weight:500;
+  margin:2px;
+  transition:0.3s;
+}
+
+.badge:hover{
+  background:var(--gradient);
+  color:white;
+  transform:translateY(-3px);
+}
+
+/* Quote style */
+blockquote{
+  font-style:italic;
+  font-weight:500;
+  padding:15px 20px;
+  margin:25px 0;
+  border-left:4px solid #9333ea;
+  background:rgba(147,51,234,0.08);
+  border-radius:10px;
+  color:#e9d5ff;
+}
+
+
+/* ================= OBJECTIVE DESIGN ================= */
+
+.objective-card{
+  max-width:800px;
+  margin:auto;
+  text-align:center;
+  line-height:1.8;
+  font-weight:300;
+  position:relative;
+  transition:0.4s;
+}
+
+.objective-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 40px rgba(147,51,234,0.2);
+}
+
+/* Accent line */
+.objective-accent{
+  width:70px;
+  height:4px;
+  background:var(--gradient);
+  margin:0 auto 25px;
+  border-radius:10px;
+}
+
+/* Title styling */
+.objective-title{
+  font-size:20px;
+  font-weight:600;
+  margin-bottom:20px;
+  background:var(--gradient);
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+/* Paragraph styling */
+.objective-card p{
+  margin-bottom:18px;
+  font-size:15px;
+  color:#e2e8f0;
+}
+
+/* Reuse highlight + badge styles if already added */
+/* If not, keep these */
+
+.highlight{
+  font-weight:600;
+  color:#c084fc;
+}
+
+.badge{
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:20px;
+  background:rgba(147,51,234,0.15);
+  border:1px solid rgba(147,51,234,0.4);
+  font-size:13px;
+  font-weight:500;
+  margin:2px;
+  transition:0.3s;
+}
+
+.badge:hover{
+  background:var(--gradient);
+  color:white;
+  transform:translateY(-3px);
+}
+
+
+/* ================= EDUCATION TIMELINE ================= */
+
+.education-timeline{
+  max-width:900px;
+  margin:auto;
+  position:relative;
+  padding-left:20px;
+  border-left:3px solid rgba(147,51,234,0.4);
+}
+
+.edu-item{
+  display:flex;
+  align-items:flex-start;
+  margin-bottom:50px;
+  position:relative;
+}
+
+.edu-icon{
+  font-size:28px;
+  background:var(--gradient);
+  width:60px;
+  height:60px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  margin-right:20px;
+  box-shadow:0 10px 25px rgba(147,51,234,0.3);
+}
+
+.edu-content{
+  background:var(--card);
+  padding:20px 25px;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,0.08);
+  flex:1;
+  transition:0.4s;
+}
+
+.edu-content:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* Level text */
+.edu-level{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:#c084fc;
+  font-weight:600;
+}
+
+/* School name */
+.edu-content h3{
+  margin:8px 0 10px;
+  font-size:18px;
+  font-weight:600;
+  background:var(--gradient);
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+/* Program text */
+.edu-content p{
+  font-size:14px;
+  line-height:1.6;
+  margin-bottom:10px;
+  color:#e2e8f0;
+}
+
+/* Year badge */
+.edu-year{
+  display:inline-block;
+  padding:4px 10px;
+  font-size:12px;
+  border-radius:20px;
+  background:rgba(147,51,234,0.15);
+  border:1px solid rgba(147,51,234,0.4);
+}
+
+
+/* ================= EXPERIENCE TIMELINE ================= */
+
+.experience-timeline{
+  max-width:900px;
+  margin:auto;
+  position:relative;
+  padding-left:20px;
+  border-left:3px solid rgba(59,130,246,0.4);
+}
+
+.exp-item{
+  display:flex;
+  align-items:flex-start;
+  margin-bottom:50px;
+}
+
+.exp-icon{
+  font-size:26px;
+  background:var(--gradient);
+  width:60px;
+  height:60px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  margin-right:20px;
+  box-shadow:0 10px 25px rgba(59,130,246,0.3);
+}
+
+.exp-content{
+  background:var(--card);
+  padding:25px;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,0.08);
+  flex:1;
+  transition:0.4s;
+}
+
+.exp-content:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* Role badge */
+.exp-role{
+  display:inline-block;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:#60a5fa;
+  font-weight:600;
+  margin-bottom:8px;
+}
+
+/* School/Company Name */
+.exp-content h3{
+  margin:5px 0;
+  font-size:18px;
+  font-weight:600;
+  background:var(--gradient);
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+/* Location */
+.exp-location{
+  display:block;
+  font-size:13px;
+  color:#94a3b8;
+  margin-bottom:5px;
+}
+
+/* Year badge */
+.exp-year{
+  display:inline-block;
+  margin:8px 0 15px;
+  padding:4px 10px;
+  font-size:12px;
+  border-radius:20px;
+  background:rgba(59,130,246,0.15);
+  border:1px solid rgba(59,130,246,0.4);
+}
+
+/* Responsibilities list */
+.exp-list{
+  margin-top:10px;
+  padding-left:20px;
+}
+
+.exp-list li{
+  margin-bottom:8px;
+  font-size:14px;
+  line-height:1.6;
+  color:#e2e8f0;
+  position:relative;
+}
+
+.exp-list li::marker{
+  color:#9333ea;
+}
+
+.license-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-top:30px;
+}
+
+.license-card-pro{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:30px;
+  padding:35px 45px;
+  border-radius:20px;
+  background:var(--card);
+  border:1px solid rgba(255,255,255,0.08);
+  transition:all 0.4s ease;
+  max-width:700px;
+  width:100%;
+}
+
+.license-card-pro:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 20px 50px rgba(0,0,0,0.4);
+  border-color:rgba(147,51,234,0.5);
+}
+
+/* Icon Circle */
+.license-icon-circle{
+  position:relative;
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Inner Circle (core of badge) */
+.icon-inner{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#3b82f6,#9333ea);
+  z-index:2;
+  box-shadow:0 0 15px rgba(147,51,234,0.5);
+  animation:pulseIcon 2s ease-in-out infinite alternate;
+}
+
+/* Rotating ring */
+.icon-ring{
+  position:absolute;
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  border:3px solid rgba(147,51,234,0.4);
+  animation:rotateRing 4s linear infinite;
+}
+
+/* Pulse animation for inner circle */
+@keyframes pulseIcon{
+  from{ box-shadow:0 0 10px rgba(147,51,234,0.3); }
+  to{ box-shadow:0 0 30px rgba(147,51,234,0.8); }
+}
+
+/* Rotate animation for ring */
+@keyframes rotateRing{
+  from{ transform:rotate(0deg); }
+  to{ transform:rotate(360deg); }
+}
+
+/* Text styling */
+.license-right h3{
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:8px;
+  background:var(--gradient);
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.license-org{
+  font-size:14px;
+  color:#cbd5e1;
+  margin-bottom:12px;
+}
+
+.license-year{
+  display:inline-block;
+  padding:5px 12px;
+  font-size:12px;
+  border-radius:20px;
+  background:rgba(147,51,234,0.15);
+  border:1px solid rgba(147,51,234,0.4);
+}
+
+/* Shine sweep effect */
+.card-shine{
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:40%;
+  height:100%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+  transform:skewX(-25deg);
+}
+
+.license-card-pro:hover .card-shine{
+  animation:shineMove 1.2s ease;
+}
+
+@keyframes shineMove{
+  0%{ left:-100%; }
+  100%{ left:120%; }
+}
+
+
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+  gap:25px;
+}
+
+/* Flip card container */
+.flip-card{
+  background:transparent;
+  perspective:1000px;
+}
+
+/* Inner card */
+.flip-card-inner{
+  position:relative;
+  width:100%;
+  height:150px;
+  text-align:center;
+  transition:transform 0.8s;
+  transform-style:preserve-3d;
+  cursor:pointer;
+  border-radius:20px;
+}
+
+/* Flip on hover */
+.flip-card:hover .flip-card-inner{
+  transform:rotateY(180deg);
+}
+
+/* Front and back */
+.flip-card-front,
+.flip-card-back{
+  position:absolute;
+  width:100%;
+  height:100%;
+  backface-visibility:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:20px;
+  padding:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  font-weight:500;
+  font-size:16px;
+}
+
+/* Front side style */
+.flip-card-front{
+  background:var(--card);
+  color:var(--text);
+  font-size:28px;
+}
+
+/* Back side style */
+.flip-card-back{
+  background:linear-gradient(135deg,#3b82f6,#9333ea);
+  color:white;
+  transform:rotateY(180deg);
+  font-size:14px;
+  line-height:1.4;
+}
+
+
+/* ================= STORY SECTION ================= */
+
+.story-wrapper{
+  display:flex;
+  justify-content:center;
+  margin-top:40px;
+}
+
+.story-card{
+  max-width:900px;
+  background:var(--card);
+  backdrop-filter:blur(15px);
+  border-radius:25px;
+  padding:50px 45px;
+  border:1px solid rgba(255,255,255,0.08);
+  line-height:1.9;
+  font-size:15px;
+  position:relative;
+  transition:0.4s;
+}
+
+.story-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 50px rgba(0,0,0,0.4);
+}
+
+/* Accent Line */
+.story-accent{
+  width:80px;
+  height:4px;
+  background:var(--gradient);
+  border-radius:10px;
+  margin-bottom:25px;
+}
+
+/* Title */
+.story-title{
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:25px;
+  background:var(--gradient);
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+/* Paragraph spacing */
+.story-card p{
+  margin-bottom:20px;
+  color:#e2e8f0;
+}
+
+/* Blockquote styling */
+.story-card blockquote{
+  margin:30px 0;
+  padding:20px 25px;
+  border-left:4px solid #9333ea;
+  background:rgba(147,51,234,0.08);
+  font-style:italic;
+  border-radius:15px;
+  color:#e9d5ff;
+  font-weight:500;
+}
+
+/* Final quote emphasis */
+.final-quote{
+  font-size:18px;
+  font-weight:600;
+  text-align:center;
+  color:#ffffff;
+  border-left:none;
+}
+
+/* ================= PHILOSOPHY SECTION ================= */
+
+.philosophy-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+  gap:30px;
+  margin-top:30px;
+}
+
+.philosophy-card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(18px);
+  border-radius:25px;
+  padding:45px 35px;
+  border:1px solid rgba(255,255,255,0.08);
+  line-height:1.8;
+  font-size:15px;
+  position:relative;
+  opacity:1;
+  transform:translateY(40px);
+  transition:0.6s;
+}
+
+.philosophy-card.show{
+  opacity:1;
+  transform:translateY(0);
+  transition:0.6s ease-out;
+}
+
+.philosophy-accent{
+  width:80px;
+  height:4px;
+  background:linear-gradient(135deg,#3b82f6,#9333ea);
+  border-radius:10px;
+  margin-bottom:25px;
+}
+
+.philosophy-card h3{
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:25px;
+  color:#ffffff;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.philo-icon{
+  font-size:26px;
+  animation:float 3s ease-in-out infinite;
+}
+
+/* Paragraph styling */
+.philosophy-card p{
+  margin-bottom:20px;
+  color:#e2e8f0;
+  text-align:justify;
+}
+
+/* Floating animation for icons */
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-6px);}
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <h1><a href="#home">Maria Queenie Kierl S. Esco</a></h1>
+  <div class="menu-toggle">&#9776;</div>
+  <ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#objectives">Objectives</a></li>
+  <li><a href="#education">Education</a></li>
+  <li><a href="#experience">Experience</a></li>
+  <li><a href="#skills">Skills</a></li>
+  <li><a href="#licenses">Licenses</a></li>
+  <!-- <li><a href="#development">Development</a></li> -->
+  <li><a href="#hobbies">Hobbies</a></li>
+  <li><a href="#philosophy">Philosophy</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="home">
+<div class="hero-text">
+  <h1>Hi! I'm Maria Queenie S. Esco,</h1>
+  <h2 class="typing" id="typing-text"></h2>
+  <p>“Shaping Minds, Transforming Futures:
+An Educator’s Commitment to Excellence”</p>
+  <a href="#about" class="hero-btn">Explore Portfolio</a>
+</div>
+
+
+  <div class="hero-img">
+    <img src="../queenie/queen.png" alt="Teacher">
+  </div>
+</div>
+
+<section id="about">
+  <h2>About Me</h2>
+
+  <div class="about-container">
+
+    <!-- TEXT CONTENT -->
+    <div class="card about-text">
+
+  <div class="about-accent"></div>
+
+  <p>
+    I am a <span class="highlight">Technology and Livelihood Education (TLE)</span> teacher 
+    majoring in <span class="highlight">Garments, Fashion, and Design</span>. 
+    Currently, I am pursuing a 
+    <span class="badge">Master’s Degree in Special Education (SPED)</span>, 
+    driven by my aspiration to work abroad and expand my impact as an educator.
+  </p>
+
+  <p>
+    Encouraged by my best friend <span class="highlight-soft">Hedwaig</span>, 
+    I chose this meaningful path even though it differs from my undergraduate degree. 
+    Her support strengthened my courage to grow beyond limitations.
+  </p>
+
+  <blockquote>
+    “Growth begins where comfort ends.”
+  </blockquote>
+
+  <p>
+    Beyond teaching, I am passionate about <span class="highlight">travel and adventure</span>. 
+    I dream of exploring Sagada, Siargao, Batanes, and Palawan. 
+    I love the beach, swimming, and I aspire to try surfing, skydiving, 
+    and other thrilling experiences that challenge me beyond my comfort zone.
+  </p>
+
+  <p>
+    Through my journey, I have learned the value of 
+    <span class="badge">independence</span>, 
+    <span class="badge">resilience</span>, and 
+    <span class="badge">courage</span>. 
+    I bring these lessons into my classroom, inspiring students to explore, grow, 
+    and embrace life with curiosity and confidence.
+  </p>
+
+</div>
+
+
+    <!-- IMAGE CAROUSEL -->
+    <div class="carousel">
+      <div class="carousel-images">
+        <img src="../queenie/1.JPG" alt="Travel 1">
+        <img src="../queenie/2.JPG" alt="Travel 2">
+\      </div>
+
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="objectives">
+  <h2>Career Objective</h2>
+
+  <div class="card objective-card">
+
+    <div class="objective-accent"></div>
+
+    <h3 class="objective-title">Professional Objective</h3>
+
+    <p>
+      <span class="highlight">Passionate and dedicated educator</span> committed to 
+      inspiring students, fostering 
+      <span class="badge">inclusive learning</span>, and nurturing both 
+      academic and personal growth.
+    </p>
+
+    <p>
+      Seeking a teaching role where I can leverage my experience in 
+      <span class="badge">lesson planning</span>, 
+      <span class="badge">student engagement</span>, and 
+      <span class="badge">character development</span> 
+      to make a meaningful impact in the classroom and the school community.
+    </p>
+
+  </div>
+</section>
+
+
+
+<section id="education">
+  <h2>Education</h2>
+
+  <div class="education-timeline">
+
+    <!-- TERTIARY -->
+    <div class="edu-item">
+      <div class="edu-icon">🎓</div>
+      <div class="edu-content">
+        <span class="edu-level">Tertiary Education</span>
+        <h3>Eastern Visayas State University</h3>
+        <p>
+          Bachelor of Technical-Vocational Teacher Education (BTVTED)<br>
+          Major in Garments, Fashion & Design (GFD)
+        </p>
+        <span class="edu-year">2019 – 2025</span>
+      </div>
+    </div>
+
+    <!-- SENIOR HIGH -->
+    <div class="edu-item">
+      <div class="edu-icon">🏫</div>
+      <div class="edu-content">
+        <span class="edu-level">Senior High School</span>
+        <h3>Leyte National High School</h3>
+        <p>
+          Humanities and Social Sciences (HUMSS)
+        </p>
+        <span class="edu-year">2017 – 2019</span>
+      </div>
+    </div>
+
+    <!-- ELEMENTARY -->
+    <div class="edu-item">
+      <div class="edu-icon">📘</div>
+      <div class="edu-content">
+        <span class="edu-level">Elementary Education</span>
+        <h3>Mercyville Elementary School</h3>
+        <span class="edu-year">2007 – 2013</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="experience">
+  <h2>Teaching Experience</h2>
+
+  <div class="experience-timeline">
+
+    <!-- STUDENT TEACHER -->
+    <div class="exp-item">
+      <div class="exp-icon">👩‍🏫</div>
+      <div class="exp-content">
+        <span class="exp-role">Student Teacher (TLE Students)</span>
+        <h3>Tacloban City National High School</h3>
+        <span class="exp-location">Tacloban City, Philippines</span>
+        <span class="exp-year">October 2024 – April 2025</span>
+      </div>
+    </div>
+
+    <!-- ESL TEACHER -->
+    <div class="exp-item">
+      <div class="exp-icon">🌍</div>
+      <div class="exp-content">
+        <span class="exp-role">ESL Teacher</span>
+        <h3>51Talk – Online ESL Platform</h3>
+        <span class="exp-year">August 2025 – Present</span>
+
+        <ul class="exp-list">
+          <li>Taught English grammar, vocabulary, speaking, and listening skills to non-native speakers.</li>
+          <li>Designed customized lesson plans based on students’ learning levels and goals.</li>
+          <li>Assessed student progress through quizzes and interactive activities.</li>
+          <li>Conducted one-on-one sessions for learners of various age groups.</li>
+          <li>Provided constructive feedback and encouraged active student engagement.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="skills">
+  <h2>Professional Skills</h2>
+  <div class="skills-grid">
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          💻
+        </div>
+        <div class="flip-card-back">
+          Proficient in Microsoft Word and PowerPoint
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          🛠️
+        </div>
+        <div class="flip-card-back">
+          Willing to expand knowledge in digital tools and software
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          🔄
+        </div>
+        <div class="flip-card-back">
+          Adaptable to different roles and fast learner
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          ⏱️
+        </div>
+        <div class="flip-card-back">
+          Excellent attention to detail and time management
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          🗣️
+        </div>
+        <div class="flip-card-back">
+          Strong communication and collaboration skills
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="licenses">
+  <h2>Licenses & Endorsements</h2>
+
+  <div class="license-container">
+
+    <div class="license-card-pro">
+
+      <!-- Icon Circle -->
+      <div class="license-icon-circle">
+        <div class="icon-inner"></div>
+        <div class="icon-ring"></div>
+      </div>
+
+      <!-- Text Content -->
+      <div class="license-right">
+        <h3>Licensed Professional Teacher</h3>
+        <p class="license-org">Professional Regulation Commission (PRC)</p>
+        <span class="license-year">2026 – Present</span>
+      </div>
+
+      <!-- Shine effect -->
+      <div class="card-shine"></div>
+
+    </div>
+
+  </div>
+</section>
+
+
+</section>
+
+<!-- <section id="development">
+  <h2>Professional Development</h2>
+  <div class="card">
+    • Attended National Teachers Conference (2024)<br>
+    • Workshop on Technology Integration in Education<br>
+    • Seminar on Inclusive Classroom Strategies<br>
+    • Continuous Learning in Curriculum Innovation
+  </div>
+</section> -->
+
+<section id="hobbies">
+  <h2>Personal Hobbies and Experiences</h2>
+
+  <div class="story-wrapper">
+    <div class="story-card">
+
+      <div class="story-accent"></div>
+
+      <h3 class="story-title">A Calling I Never Expected</h3>
+
+      <p>
+Teaching was never the dream I once held close to my heart. If I am completely honest,
+it was not the path I wanted. It was simply the direction life led me to. But becoming a
+student teacher changed everything.
+      </p>
+
+      <p>
+At first, I was unsure. I doubted myself. I questioned whether I truly belonged in front of
+a classroom. Yet as the days passed, I slowly began to understand something beautiful.
+Teaching is not just about instructing it is about connecting.
+      </p>
+
+      <p>
+Even though I am the teacher, I learn from my students every single day. I learn about
+their struggles, their silent battles, their dreams, and their fears. Some of them share
+stories they cannot even tell their closest friends. They talk to me about relationships,
+family problems, financial hardships, and personal challenges. In those moments, I
+realized that my role is not just to teach lessons from a book, but to become a safe
+space.
+      </p>
+
+      <blockquote>
+And that is when I started to love teaching.
+      </blockquote>
+
+      <p>
+Growing up, books were once my entire world. In high school, I was a super fan of
+reading e-books, especially on Wattpad. I would stay up all night reading romance,
+drama, fantasy until my eyes hurt. Maybe that’s even the reason I now have graded
+eyesight. But through those stories, I learned so much. I improved my spelling,
+discovered new words, understood deeper meanings, and expanded my imagination.
+Books taught me in ways school sometimes could not.
+      </p>
+
+      <p>
+But now, things are different.
+      </p>
+
+      <p>
+I buy books with good intentions, telling myself I will read them again like before. Yet I
+cannot even finish the first page. Instead of staying up all night reading, I now choose
+sleep. Life feels heavier. Responsibilities feel real. Maybe I am still trying to find my
+rhythm again.
+      </p>
+
+      <p>
+I am not an athlete. I do not have championship titles or sports achievements. But
+maybe one day, I want to learn tennis. Maybe it’s never too late to start something new.
+      </p>
+
+      <p>
+I love traveling not just traveling but going on adventures. I crave experiences that
+challenge me, that push me out of my comfort zone. I may not have the kind of
+experiences others proudly share. I am still figuring things out. I am still learning how to
+succeed in life, how to build stability, how to grow.
+      </p>
+
+      <blockquote>
+And maybe that’s okay.
+      </blockquote>
+
+      <p>
+Because teaching the career I never wanted is slowly shaping me into the person I am
+becoming. Through my students, I am learning empathy, strength, patience, and
+resilience. Through their stories, I see pieces of my own journey.
+      </p>
+
+      <p>
+I may still be figuring out life.
+      </p>
+
+      <blockquote class="final-quote">
+But one thing I know now I did not choose teaching.
+Teaching chose me.
+And somewhere between lesson plans and heartfelt conversations, I found purpose.
+      </blockquote>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="philosophy">
+  <h2>Philosophy</h2>
+
+  <div class="philosophy-grid">
+
+    <!-- Education Philosophy Card -->
+    <div class="philosophy-card">
+      <div class="philosophy-accent"></div>
+      <h3>My Philosophy of Education <span class="philo-icon">📚</span></h3>
+
+      <p>
+To me, education is more than a system, it is a responsibility and a calling. I believe that
+teaching is one of the most powerful ways to shape the future of a nation. Every learner
+who enters the classroom carries potential, and it is my role to help uncover, nurture,
+and guide that potential toward growth and purpose.
+      </p>
+
+      <p>
+I see education as a space where knowledge meets character. Academic excellence is
+important, but it must walk hand in hand with integrity, empathy, and resilience. A truly
+meaningful education forms not only intelligent minds but also compassionate hearts.
+      </p>
+
+      <p>
+My approach to teaching centers on clarity, flexibility, and inclusion. I recognize that no
+two learners are the same. Each student has unique strengths, needs, and ways of
+understanding the world. Through inclusive practices, differentiated strategies, and
+learner-centered instruction, I strive to create an environment where everyone feels
+seen, supported, and capable of success.
+      </p>
+
+      <p>
+I believe classrooms should be safe spaces for curiosity, respectful dialogue, and
+discovery, places where diversity is embraced and every voice matters. When learners
+feel valued, they gain confidence not only to achieve academically but also to contribute
+meaningfully to society.
+      </p>
+    </div>
+
+    <!-- Life Philosophy Card -->
+    <div class="philosophy-card">
+      <div class="philosophy-accent"></div>
+      <h3>My Philosophy in Life <span class="philo-icon">🌟</span></h3>
+
+      <p>
+Life, for me, is a journey of continuous becoming. It is a process of learning, unlearning,
+and growing through experiences both joyful and challenging. I believe that growth often
+comes through adversity, and that every obstacle carries a lesson meant to strengthen
+character and deepen understanding.
+      </p>
+
+      <p>
+My life is guided by faith, gratitude, and authenticity. I choose to approach each day with
+humility, recognizing that success is not measured solely by achievements, but by the
+positive impact we leave on others.
+      </p>
+
+      <p>
+I believe that true fulfillment is found in service — lifting others, offering kindness, and
+building connections rooted in respect and compassion. Whether as an educator, a
+colleague, a family member, or a friend, I strive to live intentionally, guided by purpose
+and a sincere desire to contribute to the greater good.
+      </p>
+
+      <p>
+For me, a meaningful life is one that nurtures the mind, strengthens the heart, and
+honors the spirit while inspiring others to do the same.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<footer>
+  © 2026 Maria Queenie Kierl S. Esco | Professional Educator Portfolio
+</footer>
+
+<!-- Custom Cursor -->
+<div class="cursor"></div>
+<div class="cursor-shadow"></div>
+
+
+<script>
+// =====================
+// Scroll reveal for cards
+// =====================
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+  const trigger = window.innerHeight * 0.85;
+  cards.forEach(card => {
+    const top = card.getBoundingClientRect().top;
+    if(top < trigger){
+      card.classList.add('show');
+    }
+  });
+});
+
+// =====================
+// Mobile menu toggle
+// =====================
+const toggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('nav ul');
+
+toggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
+
+// ================= CUSTOM CURSOR =================
+const cursor = document.querySelector('.cursor');
+const shadow = document.querySelector('.cursor-shadow');
+
+let mouseX = 0;
+let mouseY = 0;
+let shadowX = 0;
+let shadowY = 0;
+
+// Update cursor immediately
+window.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+});
+
+// Shadow follows with delay
+function animateShadow() {
+  shadowX += (mouseX - shadowX) * 0.1; // speed factor
+  shadowY += (mouseY - shadowY) * 0.1;
+  shadow.style.transform = `translate(${shadowX}px, ${shadowY}px)`;
+  requestAnimationFrame(animateShadow);
+}
+animateShadow();
+
+
+const lines = ["Licensed Teacher", "Dedicated Mentor", "Quality Education"];
+const typingElement = document.getElementById('typing-text');
+
+let lineIndex = 0;   // current line
+let charIndex = 0;   // current character
+let typing = true;   // typing or deleting
+
+function typeLoop() {
+  if(typing){
+    // typing letters
+    typingElement.innerHTML = lines[lineIndex].substring(0, charIndex) + (charIndex % 2 === 0 ? "|" : ""); 
+    charIndex++;
+    if(charIndex > lines[lineIndex].length){
+      typing = false;
+      setTimeout(typeLoop, 1000); // pause before deleting
+      return;
+    }
+    setTimeout(typeLoop, 100);
+  } else {
+    // deleting letters
+    charIndex--;
+    typingElement.innerHTML = lines[lineIndex].substring(0, charIndex) + "|";
+    if(charIndex === 0){
+      typing = true;
+      lineIndex = (lineIndex + 1) % lines.length; // next line
+      setTimeout(typeLoop, 200); // pause before typing next line
+      return;
+    }
+    setTimeout(typeLoop, 50);
+  }
+}
+
+typeLoop();
+
+
+// ================= CAROUSEL FUNCTION =================
+const carousel = document.querySelector('.carousel-images');
+const images = document.querySelectorAll('.carousel-images img');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+let index = 0;
+
+function updateCarousel(){
+  carousel.style.transform = `translateX(${-index * 100}%)`;
+}
+
+nextBtn.addEventListener('click', () => {
+  index = (index + 1) % images.length;
+  updateCarousel();
+});
+
+prevBtn.addEventListener('click', () => {
+  index = (index - 1 + images.length) % images.length;
+  updateCarousel();
+});
+
+// Auto slide every 4 seconds
+setInterval(() => {
+  index = (index + 1) % images.length;
+  updateCarousel();
+}, 4000);
+
+</script>
+
+
+</body>
+</html>
